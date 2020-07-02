@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class SingletonExample : MonoBehaviour
 {
-    private static scrSingletonExample _instance = null;
+    private static SingletonExample _instance = null;
 
-    public static scrSingletonExample Instance
+    public static SingletonExample Instance
     {
         get
         {
