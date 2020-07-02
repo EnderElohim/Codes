@@ -63,7 +63,7 @@ public class scrSnap : MonoBehaviour
         
 
         if (isChanging)
-            return;
+            return; 
 
         Calculate();
 
