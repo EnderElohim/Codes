@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-public class scrSnap : MonoBehaviour
+public class SnapToCentre : MonoBehaviour
 {
     //Father object of the images. Dont forget to assign.
     public RectTransform container;
