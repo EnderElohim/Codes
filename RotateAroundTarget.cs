@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class scrRotateAroundTarget : MonoBehaviour
+public class RotateAroundTarget : MonoBehaviour
 {
  
     public Transform target;
