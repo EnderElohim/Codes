@@ -5,24 +5,18 @@ using TMPro;
 
 public class MovingColourText : MonoBehaviour
 {
-    TextMeshProUGUI myText;
-
-
-    public string currentText;
+   public TextColour textColour;
+    private TextMeshProUGUI textDisplayer;
+    private string currentText;
     private int currentStringId = 0;
-
-
     private float timer = 1;
 
-    // Start is called before the first frame update
     void Start()
     {
-        myText = GetComponent<TextMeshProUGUI>();
-        currentText = myText.text;
-
+        textDisplayer = GetComponent<TextMeshProUGUI>();
+        currentText = textDisplayer.text;
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
 
@@ -35,9 +29,10 @@ public class MovingColourText : MonoBehaviour
         else
         {
             timer = 1.1f;
-            myText.text = MovingTextColour(currentText, ref currentStringId);
+            textDisplayer.text = MovingTextColour(currentText, ref currentStringId);
         }
     }
+    
     private string MovingTextColour(string _myText, ref int _currentId)
     {
         string newString = "";
@@ -51,7 +46,7 @@ public class MovingColourText : MonoBehaviour
             }
             if (i == _currentId)
             {
-                newString += "<color=red>" + _myText.Substring(i, 1) + "</color>";
+                newString += "<color="+ textColour.ToString() + ">" + _myText.Substring(i, 1) + "</color>";
             }
             else
             {
@@ -64,5 +59,16 @@ public class MovingColourText : MonoBehaviour
 
         return newString;
     }
-
+    
+    public enum TextColour
+    {
+        black, 
+        blue, 
+        green, 
+        orange, 
+        purple, 
+        red, 
+        white,
+        yellow
+    }
 }
